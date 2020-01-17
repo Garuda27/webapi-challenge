@@ -13,7 +13,7 @@ function validateProject(req, res, next) {
   function validateAction(req, res, next) {
     if (req.body) {
       res.status(400).json({
-        error: "Missing required field"
+        error: "Required field is missing"
       });
     } else {
       next();
@@ -33,7 +33,7 @@ function validateProject(req, res, next) {
         }
       })
       .catch(err =>
-        res.status(500).json("Error getting action")
+        res.status(500).json("Cannot get action")
       );
   }
 

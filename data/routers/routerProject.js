@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
     projectModel
         .insert(req.body)
         .then(newProject => {res.send(201).json(newProject)})
-        .catch(error => {res.send(500).json(Error_Message)})
+        .catch(error => {res.send(500).json({message: "The project could not be found"})})
 })
 
 router.put('/:id', validateProject, (req, res) => {
